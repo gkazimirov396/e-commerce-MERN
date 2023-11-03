@@ -1,0 +1,23 @@
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+
+  .form-container {
+    background-color: #fff;
+    padding: 2.5rem 2.3rem;
+    width: 26rem;
+    border-radius: 6px;
+
+    & > h2 {
+      text-align: center;
+    }
+  }
+
+  .login-btn {
+    width: 100%;
+    border-radius: 0;
+  }
+}

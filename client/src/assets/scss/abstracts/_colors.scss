@@ -1,0 +1,10 @@
+$colors: (
+  'primary': (
+    'index': #7fd1ae,
+    'light': darken(#7fd1ae, 7%),
+  ),
+  'secondary': (
+    'index': #386c5f,
+    'light': lighten(#386c5f, 6%),
+  ),
+);

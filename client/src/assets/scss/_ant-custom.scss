@@ -1,0 +1,58 @@
+@use 'globals' as *;
+
+button[class*='primary'] {
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  padding: 0.25rem 2.2rem;
+  border-radius: 25px;
+  font-weight: bold;
+  height: 2.4rem;
+
+  &:is(:hover, :active, :focus) {
+    color: #fff;
+  }
+}
+
+button[class*='secondary']:has(:not([class*='primary'])) {
+  background-color: color('secondary');
+  border-color: color('secondary');
+  color: #f4f4f4;
+  cursor: pointer;
+  font: inherit;
+  padding: 7px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  height: 2.4rem;
+  text-align: center;
+  width: 100%;
+
+  &:is(:hover, :active, :focus) {
+    background-color: color('secondary', 'light');
+    border-color: color('secondary', 'light');
+    color: #f4f4f4;
+  }
+}
+
+.ant-btn-default {
+  &:is(:hover, :active, :focus) {
+    border-color: color('primary', 'light');
+    color: color('primary', 'light');
+  }
+}
+
+.ant-modal-footer button:last-child {
+  background-color: color('primary');
+  border-color: color('primary');
+  color: #fff;
+
+  &:is(:hover, :active) {
+    background-color: color('primary', 'light');
+    border-color: color('primary', 'light');
+    color: #fff;
+  }
+}
+
+h4.ant-typography {
+  margin-top: 15px;
+}

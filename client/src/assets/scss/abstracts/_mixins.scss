@@ -1,0 +1,20 @@
+@use 'breakpoints' as *;
+
+@mixin media($key, $type: 'max') {
+  @if $type != 'max' and $type != 'min' {
+    @error 'Wrong value "#{$type}" for width!Only "min" and "max" are allowed!';
+  }
+  $size: map-get($breakpoints, $key);
+
+  @media screen and (#{$type}-width: $size) {
+    @content;
+  }
+}
+
+@mixin prefix($property, $value, $prefixes: ()) {
+  #{$property}: $value;
+  
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+}

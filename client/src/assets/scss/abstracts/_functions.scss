@@ -1,0 +1,5 @@
+@use 'colors' as *;
+
+@function color($submap, $key: 'index') {
+  @return map-get($colors, $submap, $key);
+}

@@ -1,0 +1,31 @@
+.error {
+  span {
+    color: #e90505;
+    font-size: 5rem;
+    display: inline-block;
+    font-weight: bold;
+    animation: letter-bounce 0.7s infinite linear alternate;
+
+    & + span {
+      animation-delay: 0.1s;
+    }
+
+    &:last-child {
+      animation-delay: 0.2s;
+    }
+  }
+}
+
+@keyframes letter-bounce {
+  0% {
+    transform: translateY(-20px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}

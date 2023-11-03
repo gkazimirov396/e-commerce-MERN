@@ -1,0 +1,13 @@
+@use '../../assets/scss/globals' as *;
+
+.home {
+  .categories {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    @include media('xs') {
+      padding: 0;
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@use '../../assets/scss/globals' as *;
+
+.products {
+  @include media('sm') {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    & > ul {
+      translate: -29px 99px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1.5rem !important;
+    @include media('sm') {
+      align-self: start;
+      text-align: center;
+      translate: 140px;
+    }
+  }
+}

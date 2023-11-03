@@ -1,0 +1,101 @@
+@use '../../assets/scss/globals' as *;
+
+.footer {
+  display: flex;
+  background-color: transparent !important;
+  @include media('xs') {
+    flex-direction: column;
+  }
+
+  &__left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  &__logo {
+    width: 6.8rem;
+  }
+
+  &__description {
+    margin-block: 20px;
+
+    & + div {
+      display: flex;
+    }
+  }
+
+  [class*='social-icon'] {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .social-icon-fb {
+    background-color: #3b5999;
+  }
+
+  .social-icon-inst {
+    background-color: #e4405f;
+  }
+
+  .social-icon-twitter {
+    background-color: #55acee;
+  }
+
+  .social-icon-slack {
+    background-color: #611f69;
+  }
+
+  &__center {
+    flex: 1;
+    padding: 20px;
+    @include media('xs') {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 6px;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      width: 50%;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__right {
+    flex: 1;
+    padding: 20px;
+    @include media('xs') {
+      background-color: #ffff8ff8;
+    }
+  }
+
+  div.ant-typography {
+    display: flex;
+  }
+
+  &__contact-item {
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  &__payment {
+    width: 50%;
+  }
+}
