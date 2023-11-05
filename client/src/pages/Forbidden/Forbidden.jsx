@@ -15,8 +15,8 @@ const Forbidden = () => {
         subTitle="Sorry, you are not authorized to access this page."
         extra={
           <Button type="primary">
-            <Link to="/" replace>
-              Go To Home Page
+            <Link to="/login" replace>
+              Log In to your account
             </Link>
           </Button>
         }

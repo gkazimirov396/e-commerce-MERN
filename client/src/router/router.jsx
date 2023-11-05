@@ -1,7 +1,8 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
+import { Outlet, createBrowserRouter } from 'react-router-dom';
 
 import Cart from '@pages/Cart/Cart';
-import Forbidden from '@pages/Forbidden/Forbidden';
+import ErrorPage from '@pages/Error/Error';
 import Home from '@pages/Home/Home';
 import Login from '@pages/Login/Login';
 import NotFound from '@pages/NotFound/NotFound';
@@ -16,52 +17,60 @@ import PublicRoute from './PublicRoute';
 
 export const router = createBrowserRouter([
   {
-    element: <Layout />,
+    element: (
+      <ErrorBoundary FallbackComponent={ErrorPage}>
+        <Outlet />
+      </ErrorBoundary>
+    ),
     children: [
       {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/products',
+        element: <Layout />,
         children: [
           {
-            index: true,
-            element: <ProductsList />,
+            path: '/',
+            element: <Home />,
           },
           {
-            path: ':productId',
-            element: <ProductDetailed />,
+            path: '/products',
+            children: [
+              {
+                index: true,
+                element: <ProductsList />,
+              },
+              {
+                path: ':productId',
+                element: <ProductDetailed />,
+              },
+            ],
+          },
+          {
+            element: <PrivateRoute />,
+            children: [
+              {
+                path: '/cart',
+                element: <Cart />,
+              },
+            ],
           },
         ],
       },
       {
-        element: <PrivateRoute />,
-        errorElement: <Forbidden />,
+        element: <PublicRoute />,
         children: [
           {
-            path: '/cart',
-            element: <Cart />,
+            path: '/register',
+            element: <Signup />,
+          },
+          {
+            path: '/login',
+            element: <Login />,
           },
         ],
       },
-    ],
-  },
-  {
-    element: <PublicRoute />,
-    children: [
       {
-        path: '/register',
-        element: <Signup />,
-      },
-      {
-        path: '/login',
-        element: <Login />,
+        path: '*',
+        element: <NotFound />,
       },
     ],
-  },
-  {
-    path: '*',
-    element: <NotFound />,
   },
 ]);
