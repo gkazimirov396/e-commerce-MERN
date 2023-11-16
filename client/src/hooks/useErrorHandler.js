@@ -12,6 +12,6 @@ export const useErrorHandler = error => {
 
     showBoundary(error);
 
-    return () => resetBoundary;
+    return resetBoundary;
   }, [error, showBoundary, resetBoundary]);
 };
