@@ -79,8 +79,7 @@ const LayoutTeplate = () => {
         return prev;
       },
       { replace: true }
-    ); // TODO: check this
-    // setSearchParams({ prod: searchValue });
+    );
   };
 
   return (
@@ -153,7 +152,6 @@ const LayoutTeplate = () => {
                   <Link to="/login">Log In</Link>
                 </li>
               )}
-              {/* TODO: add hamburger menu on smaller screens */}
             </ul>
           </nav>
         </Header>

@@ -36,7 +36,6 @@ const CartButton = () => {
 
   return (
     <>
-      {/* FIXME: synchronize breakpoints between cart button and search input */}
       {!lg && xs ? (
         <Badge count={totalQuantity}>
           <Button type="text" shape="circle" icon={<ShoppingCartOutlined />} />

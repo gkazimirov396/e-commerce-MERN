@@ -35,7 +35,7 @@ const handleLogin = async (req, res, next) => {
         username: user.name,
       },
       process.env.JWT_SECRET,
-      { expiresIn: '7d' } // TODO: change to 2h
+      { expiresIn: '1d' }
     );
     res.status(201).json({ token });
   } catch (err) {

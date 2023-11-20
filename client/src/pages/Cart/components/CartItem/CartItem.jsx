@@ -23,17 +23,19 @@ const CartItem = ({ imageUrl, id, quantity, title, price }) => {
   const deleteFromCartHandler = () => {
     removeFromCart({ id, remove: true });
   };
-  // NOTE: change cart item design?
+
   return (
     <li className="cart__card">
-      {/* FIXME: improve design on responsive screens */}
       <img className="cart__card__image" src={imageUrl} alt={title} />
+
       <Typography.Title level={3} className="cart__card__name">
         {title}
       </Typography.Title>
+
       <Typography.Text strong className="cart__card__price">
         ${price.toFixed(2)}
       </Typography.Text>
+
       <div>
         <Button size="small" type="text" onClick={removeFromCartHandler}>
           -
@@ -43,6 +45,7 @@ const CartItem = ({ imageUrl, id, quantity, title, price }) => {
           +
         </Button>
       </div>
+
       <Button
         danger
         type="primary"
