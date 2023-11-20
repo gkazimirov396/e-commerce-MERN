@@ -80,6 +80,14 @@ const addToCart = validateRequest([
     .optional(),
 ]);
 
+const removeFromCart = validateRequest([
+  param('id', 'Invalid id.').trim().isMongoId(),
+  query(
+    'remove',
+    'The value you entered, is not supported. The only possible values are booleans.'
+  ).isBoolean(),
+]);
+
 const checkoutCart = validateRequest([
   body('phoneNumber', 'The number you entered is of incorrect format.')
     .trim()
@@ -107,4 +115,5 @@ export default {
   addToCart,
   productId,
   getProducts,
+  removeFromCart,
 };

@@ -44,7 +44,7 @@ const userSchema = new Schema(
 
         return this.save();
       },
-      removeFromCart(id) {
+      removeFromCart(id, remove) {
         const existingItem = this.cart.find(
           item => item.productId.toString() === id.toString()
         );
@@ -55,7 +55,7 @@ const userSchema = new Schema(
           throw error;
         }
 
-        if (existingItem.quantity === 1) {
+        if (existingItem.quantity === 1 || remove) {
           this.cart = this.cart.filter(
             item => item.productId.toString() !== id.toString()
           );

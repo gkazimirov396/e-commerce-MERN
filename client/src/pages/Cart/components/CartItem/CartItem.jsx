@@ -17,7 +17,11 @@ const CartItem = ({ imageUrl, id, quantity, title, price }) => {
   };
 
   const removeFromCartHandler = () => {
-    removeFromCart(id);
+    removeFromCart({ id });
+  };
+
+  const deleteFromCartHandler = () => {
+    removeFromCart({ id, remove: true });
   };
   // NOTE: change cart item design?
   return (
@@ -42,7 +46,7 @@ const CartItem = ({ imageUrl, id, quantity, title, price }) => {
       <Button
         danger
         type="primary"
-        onClick={removeFromCartHandler}
+        onClick={deleteFromCartHandler}
         className="cart__card__deleteBtn"
       >
         <DeleteOutlined />

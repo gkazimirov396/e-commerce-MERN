@@ -61,6 +61,7 @@ const addToCart = async (req, res, next) => {
 
 const removeFromCart = async (req, res, next) => {
   const id = req.params.id;
+  const remove = req.query.remove;
 
   try {
     const product = await Product.findById(id);
@@ -70,9 +71,10 @@ const removeFromCart = async (req, res, next) => {
       throw error;
     }
 
-    // TODO: add logic to remove item completely
-
-    const result = await req.user.removeFromCart(product._id);
+    const result = await req.user.removeFromCart(
+      product._id,
+      remove === 'true'
+    );
 
     res.status(200).json(result);
   } catch (err) {

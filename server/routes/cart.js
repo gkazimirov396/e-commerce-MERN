@@ -15,6 +15,6 @@ router.post('/checkout', validation.checkoutCart, cartController.checkoutCart);
 router
   .route('/:id')
   .put(validation.addToCart, cartController.addToCart)
-  .delete(validation.productId, cartController.removeFromCart);
+  .delete(validation.removeFromCart, cartController.removeFromCart);
 
 export default router;
