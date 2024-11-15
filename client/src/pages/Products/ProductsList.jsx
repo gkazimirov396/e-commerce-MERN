@@ -51,7 +51,7 @@ const ProductsList = () => {
               Products ({category || 'all'})
             </Typography.Title>
             <ul>
-              <Row gutter={[16, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
+              <Row gutter={[20, { xs: 8, sm: 16, md: 24, lg: 32 }]}>
                 {filteredProducts.map(product => (
                   <Col sm={10} md={8} lg={5} xl={4} key={product._id}>
                     <Product

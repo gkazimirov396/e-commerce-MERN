@@ -1,17 +1,20 @@
+@use '../../assets/scss/globals' as *;
+
 .error {
   span {
-    color: #e90505;
+    color: color('error');
     font-size: 5rem;
     display: inline-block;
     font-weight: bold;
     animation: letter-bounce 0.7s infinite linear alternate;
+    animation-delay: calc(var(--order) * 100ms);
 
     & + span {
-      animation-delay: 0.1s;
+      --order: 1;
     }
 
     &:last-child {
-      animation-delay: 0.2s;
+      --order: 2;
     }
   }
 }

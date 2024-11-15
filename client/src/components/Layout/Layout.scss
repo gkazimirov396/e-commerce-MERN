@@ -18,8 +18,11 @@
   nav {
     display: flex;
     align-items: center;
-    // justify-content: space-between;
     justify-content: space-around;
+
+    @include media('sm') {
+      justify-content: space-between;
+    }
   }
 
   ul {
@@ -35,16 +38,17 @@
     background-color: #dfe2e7;
     height: 40px;
     border-radius: 40px;
-    padding: 10px;
+    padding: 0.625rem;
     display: flex;
     align-items: center;
-    @include media('sm') {
+
+    @include media('md') {
       display: none;
     }
 
     > input {
       width: 250px;
-      padding-inline: 10px;
+      padding-inline: 0.625rem;
       font-size: 1.1rem;
       transition: all 0.5s ease;
       line-height: 40px;
@@ -82,11 +86,11 @@
 
 main {
   margin-block: 5.8rem;
-  // flex: 1 1 auto;
 }
 
 section {
   margin-inline: 1rem;
+
   @include media('sm') {
     margin: 0;
   }

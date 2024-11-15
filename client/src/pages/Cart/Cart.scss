@@ -26,7 +26,7 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     height: fit-content;
 
-    div {
+    .cart__info {
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       padding: 1rem;
 
@@ -37,21 +37,16 @@
   }
 }
 
-@media (max-width: 1320px) {
+@include media('xl') {
   .cart {
     max-width: 900px;
   }
 }
 
-@media (max-width: 960px) {
-  .cart {
-    max-width: 800px;
-  }
-}
-
-@media (max-width: 960px) {
+@include media('lg') {
   .cart {
     flex-direction: column;
+    max-width: 800px;
   }
 
   .cart__right {

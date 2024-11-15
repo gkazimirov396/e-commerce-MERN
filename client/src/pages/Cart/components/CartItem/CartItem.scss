@@ -1,3 +1,5 @@
+@use '../../../../assets/scss/globals' as *;
+
 .cart__card {
   width: 100%;
   padding: 1rem;
@@ -19,16 +21,16 @@
     padding: 1px 17px !important;
     border-radius: 0 !important;
     background: none !important;
-    color: #ff4d4f !important;
+    color: color('error', 'dark') !important;
 
     &:is(:hover, :active, :focus) {
-      background-color: #ff4d4f !important;
+      background-color: color('error', 'dark') !important;
       color: #fff !important;
     }
   }
 }
 
-@media (max-width: 700px) {
+@include media('md') {
   .cart__card__name {
     font-size: 0.8rem;
   }
@@ -39,20 +41,6 @@
 
   .cart__card__price {
     font-size: 0.8rem;
-  }
-}
-
-@media (max-width: 700px) {
-  .cart__card__name {
-    font-size: 0.6rem;
-  }
-
-  .cart__card__deleteBtn {
-    padding: 5px 8px;
-  }
-
-  .cart__card__price {
-    font-size: 0.6rem;
   }
 }
 
